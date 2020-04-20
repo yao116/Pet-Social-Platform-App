@@ -1,0 +1,108 @@
+User_ID,User_first_name,User_last_name,Street,City,State,"Pet_owner?",Want_to_look_after_pets
+10000001,Eric,Kennedy,Stockton Avenue,San Jose,CA,1,1
+10000002,Luis,Oliver,E Julian Street,San Jose,CA,1,0
+10000003,Esperanz,Wagner,Booksin Avenue,San Jose,CA,1,1
+10000004,Gabrielle,Reid,Jarvis Avenue,San Jose,CA,1,0
+10000005,Alani,Saunders,Kooser Road,San Jose,CA,1,1
+10000006,Hezekiah,Holt,Redmond Avenue,San Jose,CA,1,1
+10000007,Alexia,Craig,Morrie Drive,San Jose,CA,0,1
+10000008,Janelle,Kent,Garcel Drive,San Jose,CA,1,1
+10000009,Ayden,Miles,Rose Street,Berkeley,CA,1,0
+10000010,Arianna,Richardson,Virginia Street,Berkeley,CA,1,1
+10000011,Gisselle,Hardy,Sheetz Street,West Lafayette,IN,0,1
+10000012,Dax,Baker,E 46th Street,New York City,NY,1,1
+10000013,Tiffany,Alvarez,Parker Street,Berkeley,CA,1,1
+10000014,Margaret,Peterson,Towne Avenue,Los Angeles,CA,0,1
+10000015,Kimberley,Mueller,Ceres Avenue,Los Angeles,CA,1,1
+10000016,Chelsea,Mu0z,Leeward Avenue,Los Angeles,CA,1,1
+10000017,Kira,Sharma,Francis Avenue,Los Angeles,CA,0,1
+10000018,Tamara,Austin,S Coronado Street,Los Angeles,CA,1,0
+10000019,Mariam,Cross,W Hilton Avenue,Phonenix,AZ,1,0
+10000020,Josie,0rris,Sun Mari0 Street,Los Angeles,CA,1,0
+10000021,Lowri,Johnson,Arapahoe Street,Los Angeles,CA,1,0
+10000022,Aimee,Hart,San Jacinto Boulevard,Austin,TX,1,0
+10000023,Evie,Owens,E Travis St,San Antonio,TX,1,0
+10000024,Freya,Hansen,Beech Street,San Diego,CA,1,0
+10000025,Stephanie,Rees,Cedar Street,San Diego,CA,1,1
+10000026,Ashton,Tait,Ninth Avenue,San Diego,CA,1,1
+10000027,Selina,Dickinson,Island Avenue,San Diego,CA,1,1
+10000028,Katarina,England,Market Street,San Diego,CA,1,1
+10000029,Huma,Brennan ,G Street,San Diego,CA,1,1
+10000030,Kirandeep,Weaver,31st Street,San Diego,CA,1,0
+10000031,Nabiha,Mack,Cedar Street,San Diego,CA,1,1
+10000032,Herbert,Macleod,Ninth Avenue,San Diego,CA,1,1
+10000033,Akshay,Joyner,W Adams Avenue,Los Angeles,CA,1,1
+10000034,Anna,Hyde,W Shorb Street,Los Angeles,CA,0,1
+10000035,Adrianna,Harding,S 2nd Street,Los Angeles,CA,1,1
+10000036,August,Daniil,Crypess Avenue,New York City,NY,1,0
+10000037,Jadon,Pineda,Gates Avenue,New York City,NY,1,1
+10000038,Lexi-Mai,Franks,Palmetto Street,New York City,NY,1,1
+10000039,Nusaybah,Hodgson,Linden Street,New York City,NY,1,1
+10000040,Dilan,Pate,Bleecker Street,New York City,NY,0,1
+10000041,Kaydon,Lyons,Bonito Avenue,Long Beach,CA,1,1
+10000042,Kristopher,Duarte,Cerritos Avenue,Long Beach,CA,1,1
+10000043,Kavan,Lindsey,Gibbs Alley,Pasadena,CA,1,1
+10000044,Brandy,Naylor,Converse Avenue,Pasadena,CA,1,1
+10000045,Izabel,Millar,El Dorado Street,Pasadena,CA,1,1
+10000046,Shivam,Goff,Playhouse Alley,Pasadena,CA,1,1
+10000047,Freja,Perry,Mira Monte Pl,Pasadena,CA,0,1
+10000048,Ruby-May,Stuart,Arcade Alley,Pasadena,CA,1,1
+10000049,Holli,Brandt,Cordova Street,Pasadena,CA,1,1
+10000050,Shivani,Stacey,E First Street,Long Beach,CA,1,1
+10000051,Shanna,Clements,Beach Access Road,Long Beach,CA,0,1
+10000052,Emre,Petty,Pier G Avenue,Long Beach,CA,1,1
+10000053,Kadeem,Pruitt,Eighth Avenue,San Diego,CA,1,1
+10000054,Kayson,Andrade,Ninth Avenue,San Diego,CA,1,1
+10000055,Jillian,Brown,Cornwell Avenue,New York City,NY,1,1
+10000056,Shanaya,Thatcher,Foxhurst Road,New York City,NY,1,1
+10000057,Chelsey,Chen,S Madison Avenue,Pasadena,CA,0,1
+10000058,Namcy,Li,S Oakland Avenue,Pasadena,CA,1,1
+10000059,Elly,Yao,E Union Street,Pasadena,CA,1,1
+10000060,Thad,Cunningham,N Oakland Avenue,Pasadena,CA,0,1
+10000061,Brennan,Klein,Lime Avenue,Long Beach,CA,1,1
+10000062,Arron,Schneider,Lime Avenue,Long Beach,CA,1,1
+10000063,Wolfgang,Stewart,Hancock Street,New York City,NY,1,0
+10000064,Accius,Harrison,Voorhis Drive,New York City,NY,0,1
+10000065,Alwyn,Harmon,Barleau Street,New York City,NY,1,1
+10000066,Gray,Guerrero,Lincoln Avenue,New York City,NY,1,0
+10000067,Branson,Wilson,Whipple Street,New York City,NY,1,1
+10000068,Blaise,Black,Olive Street,New York City,NY,1,0
+10000069,Kellen,Gallagher,Delta Street,San Diego,CA,1,0
+10000070,Talon,Ray,Scott Drive,San Diego,CA,1,0
+10000071,Antone,Duncan,Alpha Street,San Diego,CA,1,0
+10000072,Fritz,Baird,Pa Posada Street,San Diego,CA,1,0
+10000073,Pedro,Robertson,Alpha Street,San Diego,CA,1,0
+10000074,Kevon,Singh,Channing Way,Berkeley,CA,0,1
+10000075,Ronaldo,Gardiner,Durant Avenue,Berkeley,CA,1,1
+10000076,Kevin,Nelson,Regent Street,Berkeley,CA,1,1
+10000077,Sean,Hanson,Olive Street,New York City,NY,1,1
+10000078,Ravi,Francis,Voorhis Drive,New York City,NY,1,1
+10000079,Frendy,Rice,Hancock Street,New York City,NY,1,1
+10000080,Jamie,Payne,Olive Street,New York City,NY,1,0
+10000081,Jack,Spencer,Hancock Street,New York City,NY,0,1
+10000082,Tom,Williams,Olive Street,New York City,NY,1,1
+10000083,Luis,Erickson,Curtis Street,Berkeley,CA,1,1
+10000084,Rubby,Neal,Allston Way,Berkeley,CA,0,1
+10000085,Henry,Velasquez,Bonar Street,Berkeley,CA,1,1
+10000086,Rob,Christensen,N Sixth Street,San Jose,CA,1,1
+10000087,Rose,Hartley,N Fifth Street,San Jose,CA,1,0
+10000088,Jessica,Howard,N Fourth Street,San Jose,CA,1,1
+10000089,Chauncey,Holland,Walter Street,New York City,NY,0,1
+10000090,Russ,Duncan,Ralph Street,New York City,NY,1,1
+10000091,Jovany,Riley,Brian Street,New York City,NY,1,1
+10000092,Vince,Anderson,Julius Street,New York City,NY,1,1
+10000093,Sunny,Martin,Doradell Drive,New York City,NY,1,1
+10000094,Valentine,Stephenson,N Seventh Street,San Jose,CA,1,1
+10000095,Dontae,Moran,N Third Street,San Jose,CA,0,1
+10000096,Adelbert,Mu0z,N Fifth Street,San Jose,CA,1,1
+10000097,Hoyt,Jenkins,N Ninth Street,San Jose,CA,0,1
+10000098,Abdul,Erickson,Jefferson Avenue,Berkeley,CA,1,0
+10000099,Alistair,Martin,California Street,Berkeley,CA,1,1
+10000100,Maximillian,Brown,McGee Avenue,Berkeley,CA,1,1
+10000101,Mina,Fang,N Sixth Street,San Jose,CA,1,0
+10000102,Julia,Zhang,N Fifth Street,San Jose,CA,1,0
+10000103,Akila,Matamoto,N Fourth Street,San Jose,CA,1,0
+10000104,Linko,Nazime,Ninth Avenue,San Diego,CA,1,0
+10000105,Jomi,Chan,W Adams Avenue,Los Angeles,CA,1,0
+10000106,Anyi,Chen,El Cerrito Plaza,El Cerrito,CA,1,0
+10000107,Chang,Li,El Cerrito Plaza,El Cerrito,CA,1,0
