@@ -16,7 +16,7 @@ CREATE TABLE User (
          PRIMARY KEY (User_ID)
      )ENGINE=INNODB DEFAULT CHARSET=latin1;
 
-LOAD DATA LOCAL INFILE 'C:/Users/admin/Desktop/257project/Pet-Social-Platform-App/Pet_Data_Tables/User.csv'
+LOAD DATA LOCAL INFILE 'C:/Users/admin/Desktop/257project/Pet-Social-Platform-App/Pet_Data_Tables//User.csv'
 INTO TABLE User
 FIELDS TERMINATED BY ',' ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
@@ -251,6 +251,8 @@ ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
+# *********************************************************************************************************************
+# *********************************************************************************************************************
 DROP TABLE IF EXISTS Breeding_Record;
 CREATE TABLE Breeding_Record (
     BRecord_ID INT(7) NOT NULL AUTO_INCREMENT,
@@ -259,8 +261,10 @@ CREATE TABLE Breeding_Record (
     Appearance_inherited_or_not BOOLEAN,
     Breeding_date DATE,
     Cost FLOAT,
-    PRIMARY KEY (BRecord_ID)
-);
+    PRIMARY KEY (BRecord_ID),
+    FOREIGN KEY (F_Pet_ID) REFERENCES Pet(Pet_ID),
+    FOREIGN KEY (M_Pet_ID) REFERENCES Pet(Pet_ID)
+)ENGINE=INNODB DEFAULT CHARSET=latin1;
 LOAD DATA LOCAL INFILE '/Users/nancy/Documents/GitHub/Pet-Social-Platform-App/Pet_Data_Tables/Breeding_Record.csv'
 INTO TABLE Breeding_Record
 FIELDS TERMINATED BY ','
@@ -276,8 +280,10 @@ CREATE TABLE Foster_Care_Record (
     Request_date DATE,
     Date_of_travle DATE,
     Date_of_return DATE,
-    PRIMARY KEY (Request_ID)
-);
+    PRIMARY KEY (Request_ID),
+    FOREIGN KEY (Pet_ID) REFERENCES Pet(Pet_ID),
+    FOREIGN KEY (User_ID) REFERENCES User(User_ID)
+)ENGINE=INNODB DEFAULT CHARSET=latin1;
 LOAD DATA LOCAL INFILE '/Users/nancy/Documents/GitHub/Pet-Social-Platform-App/Pet_Data_Tables/Foster_Care_Record.csv'
 INTO TABLE Foster_Care_Record
 FIELDS TERMINATED BY ','
@@ -292,8 +298,11 @@ CREATE TABLE Medical_History (
     Veterinary_ID INT,
     Date_of_visit DATE,
     Purpose_ID INT(3),
-    PRIMARY KEY (MRecord_ID)
-);
+    PRIMARY KEY (MRecord_ID),
+    FOREIGN KEY (Pet_ID) REFERENCES Pet(Pet_ID),
+    FOREIGN KEY (Veterinary_ID) REFERENCES Veterinary_Company(Veterinary_ID),
+    FOREIGN KEY (Purpose_ID) REFERENCES Purpose_of_Visit(Purpose_ID)
+)ENGINE=INNODB DEFAULT CHARSET=latin1;
 LOAD DATA LOCAL INFILE '/Users/nancy/Documents/GitHub/Pet-Social-Platform-App/Pet_Data_Tables/Medical_History.csv'
 INTO TABLE Medical_History
 FIELDS TERMINATED BY ','
@@ -306,7 +315,7 @@ CREATE TABLE Purpose_of_Visit (
     Purpose_ID INT(3) NOT NULL AUTO_INCREMENT,
     Purpose_discription VARCHAR(100),
     PRIMARY KEY (Purpose_ID)
-);
+)ENGINE=INNODB DEFAULT CHARSET=latin1;
 LOAD DATA LOCAL INFILE '/Users/nancy/Documents/GitHub/Pet-Social-Platform-App/Pet_Data_Tables/Purpose_of_Visit.csv'
 INTO TABLE Purpose_of_Visit
 FIELDS TERMINATED BY ','
@@ -321,7 +330,7 @@ CREATE TABLE Veterinary_Company (
     City VARCHAR(20),
     State VARCHAR(2),
     PRIMARY KEY (Veterinary_ID)
-);
+)ENGINE=INNODB DEFAULT CHARSET=latin1;
 LOAD DATA LOCAL INFILE '/Users/nancy/Documents/GitHub/Pet-Social-Platform-App/Pet_Data_Tables/Veterinary_Company.csv'
 INTO TABLE Veterinary_Company
 FIELDS TERMINATED BY ','
