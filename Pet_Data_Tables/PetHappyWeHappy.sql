@@ -1,3 +1,5 @@
+# drop database if exists PetHappyWeHappy;
+# create database PetHappyWeHappy;
 use PetHappyWeHappy;
 
 DROP TABLE IF EXISTS `PET`
@@ -18,21 +20,19 @@ IGNORE 1 ROWS(Pet_ID,User_ID,Pet_Name,DOB,Gender);
 
 
 
-DROP TABLE if exits 'Grooming_Services';
+DROP TABLE if EXISTS `Grooming_Services`;
 CREATE TABLE Grooming_Services(
          GService_ID INT(2) NOT NULL AUTO_INCREMENT,
          Service_name VARCHAR(40) NOT NULL,
          PRIMARY KEY (GService_ID)
      );
 
-
-LOAD DATA LOCAL INFILE '/Users/CHELSEY/Desktop/SPRING 2020/INFO 257/PETSOCIALPLATFORM/data/Grooming_Services.csv'
+LOAD DATA LOCAL INFILE '/Users/CHELSEY/Documents/Github/info257-gitlcone/Pet-Social-Platform-App/Pet_Data_Tables/Grooming_Services.csv'
 INTO TABLE Grooming_Services
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
-
 
 DROP TABLE  IF EXISTS 'Groomer';
 CREATE TABLE Groomer (
@@ -50,7 +50,7 @@ ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
-DROP TABLE IF EXISTS 'Grooming_Record';
+DROP TABLE IF EXISTS `Grooming_Record`;
 CREATE TABLE Grooming_Record (
     GRecord_ID int(7) NOT NULL AUTO_INCREMENT,
     Pet_ID int(8) NOT NULL,
@@ -73,7 +73,7 @@ LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
 
-DROP TABLE  IF EXISTS 'Pet_Training_Type';
+DROP TABLE  IF EXISTS `Pet_Training_Type`;
 CREATE TABLE Pet_Training_Type (
     Training_ID INT(2) NOT NULL AUTO_INCREMENT,
     Training_name VARCHAR(40) NOT NULL,
@@ -88,7 +88,7 @@ ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
-DROP TABLE IF EXISTS 'Pet_Training_Agent';
+DROP TABLE IF EXISTS `Pet_Training_Agent`;
 CREATE TABLE Pet_Training_Agent (
     Agent_ID INT(3) NOT NULL AUTO_INCREMENT,
     Agent_name VARCHAR(100) NOT NULL,
@@ -104,7 +104,7 @@ ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
-DROP TABLE  IF EXISTS 'Pet_Training_Record';
+DROP TABLE  IF EXISTS `Pet_Training_Record`;
 CREATE TABLE Pet_Training_Record (
     TRecord_ID INT(7) NOT NULL,
     Pet_ID INT(8) NOT NULL ,
@@ -127,7 +127,7 @@ LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
 
-DROP TABLE IF EXISTS 'Friend_Match_List';
+DROP TABLE IF EXISTS `Friend_Match_List`;
 CREATE TABLE Friend_Match_List
 (
     Match_ID INT (5) NOT NULL AUTO_INCREMENT,
