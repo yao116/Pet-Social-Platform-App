@@ -1,5 +1,5 @@
-# drop database if exists PetHappyWeHappy;
-# create database PetHappyWeHappy;
+drop database if exists PetHappyWeHappy;
+create database PetHappyWeHappy;
 use PetHappyWeHappy;
 
 # ________________________________________
@@ -16,7 +16,7 @@ CREATE TABLE User (
          PRIMARY KEY (User_ID)
      )ENGINE=INNODB DEFAULT CHARSET=latin1;
 
-LOAD DATA LOCAL INFILE 'C:/Users/admin/Desktop/257project/Pet-Social-Platform-App/Pet_Data_Tables//User.csv'
+LOAD DATA LOCAL INFILE '/Users/CHELSEY/Documents/Github/info257-gitlcone/Pet-Social-Platform-App/Pet_Data_Tables/User.csv'
 INTO TABLE User
 FIELDS TERMINATED BY ',' ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
@@ -30,7 +30,7 @@ CREATE TABLE Pet_Category (
          PRIMARY KEY (Pet_Category_ID)
      )ENGINE=INNODB DEFAULT CHARSET=latin1;
 
-LOAD DATA LOCAL INFILE 'C:/Users/admin/Desktop/257project/Pet-Social-Platform-App/Pet_Data_Tables/Pet_Category.csv'
+LOAD DATA LOCAL INFILE '/Users/CHELSEY/Documents/Github/info257-gitlcone/Pet-Social-Platform-App/Pet_Data_Tables/Pet_Category.csv'
 INTO TABLE Pet_Category
 FIELDS TERMINATED BY ',' ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
@@ -45,7 +45,7 @@ CREATE TABLE Insurance_Company (
          PRIMARY KEY (Insurance_company_ID)
      )ENGINE=INNODB DEFAULT CHARSET=latin1;
 
-LOAD DATA LOCAL INFILE 'C:/Users/admin/Desktop/257project/Pet-Social-Platform-App/Pet_Data_Tables/Insurance_Company.csv'
+LOAD DATA LOCAL INFILE '/Users/CHELSEY/Documents/Github/info257-gitlcone/Pet-Social-Platform-App/Pet_Data_Tables/Insurance_Company.csv'
 INTO TABLE Insurance_Company
 FIELDS TERMINATED BY ',' ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
@@ -70,7 +70,7 @@ CREATE TABLE Breed (
          ON UPDATE CASCADE
      )ENGINE=INNODB DEFAULT CHARSET=latin1;
 
-LOAD DATA LOCAL INFILE 'C:/Users/admin/Desktop/257project/Pet-Social-Platform-App/Pet_Data_Tables/Breed.csv'
+LOAD DATA LOCAL INFILE '/Users/CHELSEY/Documents/Github/info257-gitlcone/Pet-Social-Platform-App/Pet_Data_Tables/Breed.csv'
 INTO TABLE Breed
 FIELDS TERMINATED BY ',' ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
@@ -88,7 +88,7 @@ CREATE TABLE Insurance_Record (
         # Foreign Key
      )ENGINE=INNODB DEFAULT CHARSET=latin1;
 
-LOAD DATA LOCAL INFILE 'C:/Users/admin/Desktop/257project/Pet-Social-Platform-App/Pet_Data_Tables/Insurance_Record.csv'
+LOAD DATA LOCAL INFILE '/Users/CHELSEY/Documents/Github/info257-gitlcone/Pet-Social-Platform-App/Pet_Data_Tables/Insurance_Record.csv'
 INTO TABLE Insurance_Record
 FIELDS TERMINATED BY ',' ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
@@ -115,7 +115,7 @@ CREATE TABLE Pet (
          PRIMARY KEY (Pet_ID)
      )ENGINE=INNODB DEFAULT CHARSET=latin1;
 
-LOAD DATA LOCAL INFILE 'C:/Users/admin/Desktop/257project/Pet-Social-Platform-App/Pet_Data_Tables/Pet.csv'
+LOAD DATA LOCAL INFILE '/Users/CHELSEY/Documents/Github/info257-gitlcone/Pet-Social-Platform-App/Pet_Data_Tables/Pet.csv'
 INTO TABLE Pet
 FIELDS TERMINATED BY ',' ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
@@ -217,7 +217,7 @@ CREATE TABLE Pet_Training_Record (
     Training_time INT(2),
     Training_cost INT(4),
     PRIMARY KEY (TRecord_ID),
-#     FOREIGN KEY (Pet_ID) references Pet(Pet_ID) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (Pet_ID) references Pet(Pet_ID) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (Training_ID) REFERENCES Pet_Training_Type(Training_ID) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (Agent_ID) REFERENCES Pet_Training_Agent(Agent_ID) ON DELETE CASCADE ON UPDATE CASCADE
 )ENGINE=INNODB DEFAULT CHARSET=latin1;
@@ -238,9 +238,9 @@ CREATE TABLE Friend_Match_List
     Pet_ID INT(8) NOT NULL,
     Friend_ID INT(8) NOT NULL,
     Like_this_friend BOOLEAN NOT NULL,
-    PRIMARY KEY (Match_ID)
-#     FOREIGN KEY Pet_ID references Pet(Pet_ID) ON DELETE CASCADE ON UPDATE CASCADE,
-#     FOREIGN KEY Friend_ID references Pet(Pet_ID) ON DELETE CASCADE ON UPDATE CASCADE,
+    PRIMARY KEY (Match_ID),
+    FOREIGN KEY (Pet_ID) references Pet(Pet_ID) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (Friend_ID) references Pet(Pet_ID) ON DELETE CASCADE ON UPDATE CASCADE
 )ENGINE=INNODB DEFAULT CHARSET=latin1;
 
 
@@ -250,13 +250,10 @@ FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
-<<<<<<< HEAD
 
-# *********************************************************************************************************************
-# *********************************************************************************************************************
-=======
-#__________________________
->>>>>>> 125b61adf36749c175752160c3bf1ce1df0497b7
+
+# ****************************************************************#
+
 DROP TABLE IF EXISTS Breeding_Record;
 CREATE TABLE Breeding_Record (
     BRecord_ID INT(7) NOT NULL AUTO_INCREMENT,
@@ -266,10 +263,11 @@ CREATE TABLE Breeding_Record (
     Breeding_date DATE,
     Cost FLOAT,
     PRIMARY KEY (BRecord_ID),
-    FOREIGN KEY (F_Pet_ID) REFERENCES Pet(Pet_ID),
-    FOREIGN KEY (M_Pet_ID) REFERENCES Pet(Pet_ID)
+    FOREIGN KEY (F_Pet_ID) REFERENCES Pet(Pet_ID) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (M_Pet_ID) REFERENCES Pet(Pet_ID)  ON DELETE CASCADE ON UPDATE CASCADE
 )ENGINE=INNODB DEFAULT CHARSET=latin1;
-LOAD DATA LOCAL INFILE '/Users/nancy/Documents/GitHub/Pet-Social-Platform-App/Pet_Data_Tables/Breeding_Record.csv'
+
+LOAD DATA LOCAL INFILE '/Users/CHELSEY/Documents/Github/info257-gitlcone/Pet-Social-Platform-App/Pet_Data_Tables/Breeding_Record.csv'
 INTO TABLE Breeding_Record
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
@@ -285,11 +283,43 @@ CREATE TABLE Foster_Care_Record (
     Date_of_travle DATE,
     Date_of_return DATE,
     PRIMARY KEY (Request_ID),
-    FOREIGN KEY (Pet_ID) REFERENCES Pet(Pet_ID),
-    FOREIGN KEY (User_ID) REFERENCES User(User_ID)
+    FOREIGN KEY (Pet_ID) REFERENCES Pet(Pet_ID)  ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (User_ID) REFERENCES User(User_ID)  ON DELETE CASCADE ON UPDATE CASCADE
 )ENGINE=INNODB DEFAULT CHARSET=latin1;
-LOAD DATA LOCAL INFILE '/Users/nancy/Documents/GitHub/Pet-Social-Platform-App/Pet_Data_Tables/Foster_Care_Record.csv'
+
+LOAD DATA LOCAL INFILE '/Users/CHELSEY/Documents/Github/info257-gitlcone/Pet-Social-Platform-App/Pet_Data_Tables/Foster_Care_Record.csv'
 INTO TABLE Foster_Care_Record
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+
+DROP TABLE IF EXISTS Veterinary_Company;
+CREATE TABLE Veterinary_Company (
+    Veterinary_ID INT NOT NULL AUTO_INCREMENT,
+    Veterinary_Name VARCHAR(100),
+    City VARCHAR(20),
+    State VARCHAR(2),
+    PRIMARY KEY (Veterinary_ID)
+)ENGINE=INNODB DEFAULT CHARSET=latin1;
+
+LOAD DATA LOCAL INFILE '/Users/CHELSEY/Documents/Github/info257-gitlcone/Pet-Social-Platform-App/Pet_Data_Tables/Veterinary_Company.csv'
+INTO TABLE Veterinary_Company
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+DROP TABLE IF EXISTS Purpose_of_Visit;
+CREATE TABLE Purpose_of_Visit (
+    Purpose_ID INT(3) NOT NULL AUTO_INCREMENT,
+    Purpose_discription VARCHAR(100),
+    PRIMARY KEY (Purpose_ID)
+)ENGINE=INNODB DEFAULT CHARSET=latin1;
+
+LOAD DATA LOCAL INFILE '/Users/CHELSEY/Documents/Github/info257-gitlcone/Pet-Social-Platform-App/Pet_Data_Tables/Purpose_of_Visit.csv'
+INTO TABLE Purpose_of_Visit
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
@@ -303,41 +333,15 @@ CREATE TABLE Medical_History (
     Date_of_visit DATE,
     Purpose_ID INT(3),
     PRIMARY KEY (MRecord_ID),
-    FOREIGN KEY (Pet_ID) REFERENCES Pet(Pet_ID),
-    FOREIGN KEY (Veterinary_ID) REFERENCES Veterinary_Company(Veterinary_ID),
-    FOREIGN KEY (Purpose_ID) REFERENCES Purpose_of_Visit(Purpose_ID)
+    FOREIGN KEY (Pet_ID) REFERENCES Pet(Pet_ID)  ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (Veterinary_ID) REFERENCES Veterinary_Company(Veterinary_ID)  ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (Purpose_ID) REFERENCES Purpose_of_Visit(Purpose_ID)  ON DELETE CASCADE ON UPDATE CASCADE
 )ENGINE=INNODB DEFAULT CHARSET=latin1;
-LOAD DATA LOCAL INFILE '/Users/nancy/Documents/GitHub/Pet-Social-Platform-App/Pet_Data_Tables/Medical_History.csv'
+
+LOAD DATA LOCAL INFILE '/Users/CHELSEY/Documents/Github/info257-gitlcone/Pet-Social-Platform-App/Pet_Data_Tables/Medical_History.csv'
 INTO TABLE Medical_History
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
-DROP TABLE IF EXISTS Purpose_of_Visit;
-CREATE TABLE Purpose_of_Visit (
-    Purpose_ID INT(3) NOT NULL AUTO_INCREMENT,
-    Purpose_discription VARCHAR(100),
-    PRIMARY KEY (Purpose_ID)
-)ENGINE=INNODB DEFAULT CHARSET=latin1;
-LOAD DATA LOCAL INFILE '/Users/nancy/Documents/GitHub/Pet-Social-Platform-App/Pet_Data_Tables/Purpose_of_Visit.csv'
-INTO TABLE Purpose_of_Visit
-FIELDS TERMINATED BY ','
-ENCLOSED BY '"'
-LINES TERMINATED BY '\n'
-IGNORE 1 ROWS;
-
-DROP TABLE IF EXISTS Veterinary_Company;
-CREATE TABLE Veterinary_Company (
-    Veterinary_ID INT NOT NULL AUTO_INCREMENT,
-    Veterinary_Name VARCHAR(100),
-    City VARCHAR(20),
-    State VARCHAR(2),
-    PRIMARY KEY (Veterinary_ID)
-)ENGINE=INNODB DEFAULT CHARSET=latin1;
-LOAD DATA LOCAL INFILE '/Users/nancy/Documents/GitHub/Pet-Social-Platform-App/Pet_Data_Tables/Veterinary_Company.csv'
-INTO TABLE Veterinary_Company
-FIELDS TERMINATED BY ','
-ENCLOSED BY '"'
-LINES TERMINATED BY '\n'
-IGNORE 1 ROWS;
