@@ -2,8 +2,6 @@ drop database if exists PetHappyWeHappy;
 create database PetHappyWeHappy;
 use PetHappyWeHappy;
 
-use PetHappyWeHappy;
-
 # ________________________________________
 DROP TABLE IF EXISTS `Users`;
 CREATE TABLE Users (
@@ -54,7 +52,7 @@ LINES TERMINATED BY '\n'
 IGNORE 1 ROWS(Insurance_company_ID,Insurance_company_Name,Company_Link);
 
 # ________________________________________
-DROP TABLE IF EXISTS `Breed`
+DROP TABLE IF EXISTS `Breed`;
 CREATE TABLE Breed (
          Breed_ID int(4) NOT NULL AUTO_INCREMENT,
          Breed_name VARCHAR(20) NOT NULL,
@@ -63,7 +61,7 @@ CREATE TABLE Breed (
          PetGroup2 VARCHAR(10) NULL,
          MaleWtKg int(4) NULL,
          Fur_Length VARCHAR(10),
-         Avg_life_time float(5),
+         Avg_life_time VARCHAR(8) NULL,
          Temperament VARCHAR(60) NULL,
          Pet_Category_ID INT(2) not null,
          PRIMARY KEY (Breed_ID),
