@@ -61,7 +61,7 @@ CREATE TABLE Breed (
          AltBreedName VARCHAR(10) NULL,
          PetGroup1 VARCHAR(10) NULL,
          PetGroup2 VARCHAR(10) NULL,
-         MaleWtKg int(4) NULL,
+         MaleWtLb int(4) NULL,
          Fur_Length VARCHAR(10),
          Avg_life_time float(5),
          Temperament VARCHAR(60) NULL,
@@ -76,7 +76,7 @@ LOAD DATA LOCAL INFILE '/Users/nancy/Documents/GitHub/Pet-Social-Platform-App/Pe
 INTO TABLE Breed
 FIELDS TERMINATED BY ',' ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
-IGNORE 1 ROWS(Breed_ID,Breed_name,AltBreedName,PetGroup1,PetGroup2,MaleWtKg,Fur_Length,Avg_life_time,Temperament,Pet_Category_ID)
+IGNORE 1 ROWS(Breed_ID,Breed_name,AltBreedName,PetGroup1,PetGroup2,MaleWtLb,Fur_Length,Avg_life_time,Temperament,Pet_Category_ID)
 
 
 # ________________________________________
@@ -289,7 +289,7 @@ CREATE TABLE Breeding_Record (
     M_Pet_ID INT(8),
     Appearance_inherited_or_not BOOLEAN,
     Breeding_date DATE,
-    Cost FLOAT,
+    Cost INT(6),
     PRIMARY KEY (BRecord_ID),
     FOREIGN KEY (F_Pet_ID) REFERENCES Pet(Pet_ID) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (M_Pet_ID) REFERENCES Pet(Pet_ID)  ON DELETE CASCADE ON UPDATE CASCADE
@@ -305,8 +305,8 @@ IGNORE 1 ROWS;
 DROP TABLE IF EXISTS Foster_Care_Record;
 CREATE TABLE Foster_Care_Record (
     Request_ID INT(8) NOT NULL AUTO_INCREMENT,
-    Pet_ID INT(8),
-    User_ID INT(8),
+    Pet_ID INT(8) NOT NULL ,
+    User_ID INT(8) NOT NULL ,
     Request_date DATE,
     Date_of_travle DATE,
     Date_of_return DATE,
