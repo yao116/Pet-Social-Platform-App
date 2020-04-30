@@ -2,21 +2,21 @@
 # create database PetHappyWeHappy;
 use PetHappyWeHappy;
 
-DROP TABLE IF EXISTS `PET`
-CREATE TABLE PET (
-         Pet_ID int(10) NOT NULL AUTO_INCREMENT,
-         User_ID int(10) NOT NULL,
-         Pet_Name VARCHAR(25) NULL,
-         DOB DATE NULL,
-         Gender VARCHAR(2) NULL,
-         PRIMARY KEY (Pet_ID)
-     )ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
-LOAD DATA LOCAL INFILE 'C:/Users/admin/Desktop/test.csv'
-INTO TABLE PET
-FIELDS TERMINATED BY ',' ENCLOSED BY '"'
-LINES TERMINATED BY '\n'
-IGNORE 1 ROWS(Pet_ID,User_ID,Pet_Name,DOB,Gender);
+# DROP TABLE IF EXISTS `PET`
+# CREATE TABLE PET (
+#          Pet_ID int(10) NOT NULL AUTO_INCREMENT,
+#          User_ID int(10) NOT NULL,
+#          Pet_Name VARCHAR(25) NULL,
+#          DOB DATE NULL,
+#          Gender VARCHAR(2) NULL,
+#          PRIMARY KEY (Pet_ID)
+#      )ENGINE=MyISAM DEFAULT CHARSET=latin1;
+#
+# LOAD DATA LOCAL INFILE 'C:/Users/admin/Desktop/test.csv'
+# INTO TABLE PET
+# FIELDS TERMINATED BY ',' ENCLOSED BY '"'
+# LINES TERMINATED BY '\n'
+# IGNORE 1 ROWS(Pet_ID,User_ID,Pet_Name,DOB,Gender);
 
 
 
@@ -34,7 +34,7 @@ ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
-DROP TABLE  IF EXISTS 'Groomer';
+DROP TABLE  IF EXISTS `Groomer`;
 CREATE TABLE Groomer (
     Groomer_ID int(3) NOT NULL AUTO_INCREMENT,
     Groomer_name varchar(40) NOT NULL,
@@ -43,7 +43,7 @@ CREATE TABLE Groomer (
     PRIMARY KEY (Groomer_ID)
 );
 
-LOAD DATA LOCAL INFILE '/Users/CHELSEY/Desktop/SPRING 2020/INFO 257/PETSOCIALPLATFORM/data/Groomer.csv'
+LOAD DATA LOCAL INFILE '/Users/CHELSEY/Documents/Github/info257-gitlcone/Pet-Social-Platform-App/Pet_Data_Tables/Groomer.csv'
 INTO TABLE Groomer
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
@@ -65,7 +65,7 @@ CREATE TABLE Grooming_Record (
 );
 
 
-LOAD DATA LOCAL INFILE '/Users/CHELSEY/Desktop/SPRING 2020/INFO 257/PETSOCIALPLATFORM/data/Grooming_Record.csv'
+LOAD DATA LOCAL INFILE '/Users/CHELSEY/Documents/Github/info257-gitlcone/Pet-Social-Platform-App/Pet_Data_Tables/Grooming_Record.csv'
 INTO TABLE Grooming_Record
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
@@ -78,10 +78,10 @@ CREATE TABLE Pet_Training_Type (
     Training_ID INT(2) NOT NULL AUTO_INCREMENT,
     Training_name VARCHAR(40) NOT NULL,
     PRIMARY KEY (Training_ID)
-;)
+);
 
 
-LOAD DATA LOCAL INFILE '/Users/CHELSEY/Desktop/SPRING 2020/INFO 257/PETSOCIALPLATFORM/data/Pet_Training_Type.csv'
+LOAD DATA LOCAL INFILE '/Users/CHELSEY/Documents/Github/info257-gitlcone/Pet-Social-Platform-App/Pet_Data_Tables/Pet_Training_Type.csv'
 INTO TABLE Pet_Training_Type
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
@@ -97,7 +97,7 @@ CREATE TABLE Pet_Training_Agent (
     PRIMARY KEY (Agent_ID)
 );
 
-LOAD DATA LOCAL INFILE '/Users/CHELSEY/Desktop/SPRING 2020/INFO 257/PETSOCIALPLATFORM/data/Pet_Training_Agent.csv'
+LOAD DATA LOCAL INFILE '/Users/CHELSEY/Documents/Github/info257-gitlcone/Pet-Social-Platform-App/Pet_Data_Tables/Pet_Training_Agent.csv'
 INTO TABLE Pet_Training_Agent
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
@@ -119,7 +119,7 @@ CREATE TABLE Pet_Training_Record (
 );
 
 
-LOAD DATA LOCAL INFILE '/Users/CHELSEY/Desktop/SPRING 2020/INFO 257/PETSOCIALPLATFORM/data/Pet_Training_Records.csv'
+LOAD DATA LOCAL INFILE '/Users/CHELSEY/Documents/Github/info257-gitlcone/Pet-Social-Platform-App/Pet_Data_Tables/Pet_Training_Records.csv'
 INTO TABLE Pet_Training_Record
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
@@ -140,7 +140,7 @@ CREATE TABLE Friend_Match_List
 );
 
 
-LOAD DATA LOCAL INFILE '/Users/CHELSEY/Desktop/SPRING 2020/INFO 257/PETSOCIALPLATFORM/data/Friend_Matching_List.csv'
+LOAD DATA LOCAL INFILE '/Users/CHELSEY/Documents/Github/info257-gitlcone/Pet-Social-Platform-App/Pet_Data_Tables/Friend_Matching_List.csv'
 INTO TABLE Friend_Match_List
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
