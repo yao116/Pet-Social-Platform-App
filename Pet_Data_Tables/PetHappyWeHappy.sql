@@ -102,18 +102,17 @@ CREATE TABLE Pet (
          Pet_F_Name varCHAR(40),
          Pet_L_Name varCHAR(40),
          Data_of_birth Date,
-         Gender
-         Breed_ID
-         Want_friend
-         Want_breeding
-         Friendly
-         Quiet
-         Height_inch
-         Weight_lb
-         Length_inch
-         Coat_Color
+         Gender varCHAR(1),
+         Breed_ID int(4),
+         Want_friend Binary,
+         Want_breeding Binary,
+         Friendly Binary,
+         Quiet Binary,
+         Height_inch DOUBLE,
+         Weight_lb DOUBLE,
+         Length_inch DOUBLE null,
+         Coat_Color varChar(30),
          PRIMARY KEY (Pet_ID)
-        # Foreign Key
      )ENGINE=INNODB DEFAULT CHARSET=latin1;
 
 LOAD DATA LOCAL INFILE 'C:/Users/admin/Desktop/257project/Pet-Social-Platform-App/Pet_Data_Tables/Pet.csv'
