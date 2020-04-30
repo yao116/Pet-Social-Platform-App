@@ -251,3 +251,81 @@ FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
+
+DROP TABLE IF EXISTS Breeding_Record;
+CREATE TABLE Breeding_Record (
+    BRecord_ID INT(7) NOT NULL AUTO_INCREMENT,
+    F_Pet_ID INT(8),
+    M_Pet_ID INT(8),
+    Appearance_inherited_or_not BOOLEAN,
+    Breeding_date DATE,
+    Cost FLOAT,
+    PRIMARY KEY (BRecord_ID)
+);
+LOAD DATA LOCAL INFILE '/Users/nancy/Documents/GitHub/Pet-Social-Platform-App/Pet_Data_Tables/Breeding_Record.csv'
+INTO TABLE Breeding_Record
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+DROP TABLE IF EXISTS Foster_Care_Record;
+CREATE TABLE Foster_Care_Record (
+    Request_ID INT(8) NOT NULL AUTO_INCREMENT,
+    Pet_ID INT(8),
+    User_ID INT(8),
+    Request_date DATE,
+    Date_of_travle DATE,
+    Date_of_return DATE,
+    PRIMARY KEY (Request_ID)
+);
+LOAD DATA LOCAL INFILE '/Users/nancy/Documents/GitHub/Pet-Social-Platform-App/Pet_Data_Tables/Foster_Care_Record.csv'
+INTO TABLE Foster_Care_Record
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+DROP TABLE IF EXISTS Medical_History;
+CREATE TABLE Medical_History (
+    MRecord_ID INT(9) NOT NULL AUTO_INCREMENT,
+    Pet_ID INT(8),
+    Veterinary_ID INT,
+    Date_of_visit DATE,
+    Purpose_ID INT(3),
+    PRIMARY KEY (MRecord_ID)
+);
+LOAD DATA LOCAL INFILE '/Users/nancy/Documents/GitHub/Pet-Social-Platform-App/Pet_Data_Tables/Medical_History.csv'
+INTO TABLE Medical_History
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+DROP TABLE IF EXISTS Purpose_of_Visit;
+CREATE TABLE Purpose_of_Visit (
+    Purpose_ID INT(3) NOT NULL AUTO_INCREMENT,
+    Purpose_discription VARCHAR(100),
+    PRIMARY KEY (Purpose_ID)
+);
+LOAD DATA LOCAL INFILE '/Users/nancy/Documents/GitHub/Pet-Social-Platform-App/Pet_Data_Tables/Purpose_of_Visit.csv'
+INTO TABLE Purpose_of_Visit
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+DROP TABLE IF EXISTS Veterinary_Company;
+CREATE TABLE Veterinary_Company (
+    Veterinary_ID INT NOT NULL AUTO_INCREMENT,
+    Veterinary_Name VARCHAR(100),
+    City VARCHAR(20),
+    State VARCHAR(2),
+    PRIMARY KEY (Veterinary_ID)
+);
+LOAD DATA LOCAL INFILE '/Users/nancy/Documents/GitHub/Pet-Social-Platform-App/Pet_Data_Tables/Veterinary_Company.csv'
+INTO TABLE Veterinary_Company
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
