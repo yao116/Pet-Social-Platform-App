@@ -16,7 +16,7 @@ CREATE TABLE Users (
          PRIMARY KEY (User_ID)
      )ENGINE=INNODB DEFAULT CHARSET=latin1;
 
-LOAD DATA LOCAL INFILE '/Users/nancy/Documents/GitHub/Pet-Social-Platform-App/Pet_Data_Tables/User.csv'
+LOAD DATA LOCAL INFILE 'C:/Users/admin/Desktop/257project/Pet-Social-Platform-App/Pet_Data_Tables/User.csv'
 INTO TABLE Users
 FIELDS TERMINATED BY ',' ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
@@ -78,7 +78,7 @@ IGNORE 1 ROWS(Breed_ID,Breed_name,AltBreedName,PetGroup1,PetGroup2,MaleWtKg,Fur_
 
 
 # ________________________________________
-DROP TABLE IF EXISTS `Pet`
+DROP TABLE IF EXISTS `Pet`;
 CREATE TABLE Pet (
          Pet_ID int(8) NOT NULL AUTO_INCREMENT,
          User_ID int(8),
@@ -93,7 +93,7 @@ CREATE TABLE Pet (
          Quiet Binary,
          Height_inch DOUBLE,
          Weight_lb DOUBLE,
-         Length_inch DOUBLE null,
+         Length_inch varchar(7) null,
          Coat_Color varChar(30),
          PRIMARY KEY (Pet_ID),
          Foreign Key (User_ID) REFERENCES Users(User_ID),
@@ -102,7 +102,8 @@ CREATE TABLE Pet (
          ON UPDATE CASCADE
      )ENGINE=INNODB DEFAULT CHARSET=latin1;
 
-LOAD DATA LOCAL INFILE '/Users/nancy/Documents/GitHub/Pet-Social-Platform-App/Pet_Data_Tables/Pet.csv'
+LOAD DATA LOCAL INFILE 'LOAD DATA LOCAL INFILE ''C:/Users/admin/Desktop/257project/Pet-Social-Platform-App/Pet_Data_Tables/Pet.csv''
+Pet.csv'
 INTO TABLE Pet
 FIELDS TERMINATED BY ',' ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
@@ -128,7 +129,8 @@ LOAD DATA LOCAL INFILE '/Users/nancy/Documents/GitHub/Pet-Social-Platform-App/Pe
 INTO TABLE Insurance_Record
 FIELDS TERMINATED BY ',' ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
-IGNORE 1 ROWS(IRecord_ID,Insurance_company_ID,Pet_ID,Cost_per_year,Date_Start);
+IGNORE 1 ROWS(IRecord_ID,Insurance_company_ID,Pet_ID,Cost_per_year,Date_Start)
+;
 
 
 # ________________________________________
