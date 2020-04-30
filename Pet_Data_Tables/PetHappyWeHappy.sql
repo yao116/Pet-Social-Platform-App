@@ -3,8 +3,8 @@
 use PetHappyWeHappy;
 
 # ________________________________________
-DROP TABLE IF EXISTS `User`
-CREATE TABLE User (
+DROP TABLE IF EXISTS `Users`;
+CREATE TABLE Users (
          User_ID int(8) NOT NULL AUTO_INCREMENT,
          User_first_name VARCHAR(30) NOT NULL,
          User_last_name VARCHAR(30) NOT NULL,
@@ -17,7 +17,7 @@ CREATE TABLE User (
      )ENGINE=INNODB DEFAULT CHARSET=latin1;
 
 LOAD DATA LOCAL INFILE 'C:/Users/admin/Desktop/257project/Pet-Social-Platform-App/Pet_Data_Tables/User.csv'
-INTO TABLE User
+INTO TABLE Users
 FIELDS TERMINATED BY ',' ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS(User_ID, User_first_name,User_last_name,Street,City,State,Pet_owner,Want_to_help_look_after_pets);
@@ -77,15 +77,18 @@ LINES TERMINATED BY '\n'
 IGNORE 1 ROWS(Breed_ID,Breed_name,AltBreedName,PetGroup1,PetGroup2,MaleWtKg,Fur_Length,Avg_life_time,Temperament,Pet_Category_ID)
 
 # ________________________________________
-DROP TABLE IF EXISTS `Insurance_Record`
+DROP TABLE IF EXISTS `Insurance_Record`;
 CREATE TABLE Insurance_Record (
          IRecord_ID int(7) NOT NULL AUTO_INCREMENT,
          Insurance_company_ID int(5) NOT NULL,
-         Pet_ID VARCHAR(8) NOT NULL,
+         Pet_ID int(8) NOT NULL,
          Cost_per_year INT NOT NULL,
          Date_Start DATE,
-         PRIMARY KEY (IRecord_ID)
-        # Foreign Key
+         PRIMARY KEY (IRecord_ID),
+         Foreign Key (Insurance_company_ID) REFERENCES Insurance_Company(Insurance_company_ID),
+         Foreign Key (Pet_ID) REFERENCES Pet(Pet_ID)
+         ON DELETE CASCADE
+         ON UPDATE CASCADE
      )ENGINE=INNODB DEFAULT CHARSET=latin1;
 
 LOAD DATA LOCAL INFILE 'C:/Users/admin/Desktop/257project/Pet-Social-Platform-App/Pet_Data_Tables/Insurance_Record.csv'
@@ -98,7 +101,7 @@ IGNORE 1 ROWS(IRecord_ID,Insurance_company_ID,Pet_ID,Cost_per_year,Date_Start);
 DROP TABLE IF EXISTS `Pet`
 CREATE TABLE Pet (
          Pet_ID int(8) NOT NULL AUTO_INCREMENT,
-         User_ID int(8) NOT NULL,
+         User_ID int(8),
          Pet_F_Name varCHAR(40),
          Pet_L_Name varCHAR(40),
          Data_of_birth Date,
@@ -112,7 +115,11 @@ CREATE TABLE Pet (
          Weight_lb DOUBLE,
          Length_inch DOUBLE null,
          Coat_Color varChar(30),
-         PRIMARY KEY (Pet_ID)
+         PRIMARY KEY (Pet_ID),
+         Foreign Key (User_ID) REFERENCES Users(User_ID),
+         Foreign Key (Breed_ID) REFERENCES Breed(Breed_ID)
+         ON DELETE CASCADE
+         ON UPDATE CASCADE
      )ENGINE=INNODB DEFAULT CHARSET=latin1;
 
 LOAD DATA LOCAL INFILE 'C:/Users/admin/Desktop/257project/Pet-Social-Platform-App/Pet_Data_Tables/Pet.csv'
@@ -123,7 +130,24 @@ IGNORE 1 ROWS(Pet_ID,User_ID,Pet_F_Name,Pet_L_Name,Data_of_birth,Gender,Breed_ID
 ;
 
 # ________________________________________
+DROP TABLE IF EXISTS `User_Pet_Accomendation_Preference`
+CREATE TABLE User_Pet_Accomendation_Preference(
+         User_ID INT(8) NOT NULL AUTO_INCREMENT,
+         Number_of_pet_willing_to_take int(2),
+         Fst_genus_willing_to_take varchar(10),
+         Scd_genus_willing_to_take varchar(10),
+         Trd_genus_willing_to_take varchar(10),
+         Extra_preference_details varchar(60),
+         PRIMARY KEY (User_ID)
+     )ENGINE=INNODB DEFAULT CHARSET=latin1;
 
+LOAD DATA LOCAL INFILE 'C:/Users/admin/Desktop/257project/Pet-Social-Platform-App/Pet_Data_Tables/User_Pet_Accomendation_Preference.csv'
+INTO TABLE User_Pet_Accomendation_Preference
+FIELDS TERMINATED BY ',' ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+# ________________________________________
 DROP TABLE if EXISTS `Grooming_Services`;
 CREATE TABLE Grooming_Services(
          GService_ID INT(2) NOT NULL AUTO_INCREMENT,
