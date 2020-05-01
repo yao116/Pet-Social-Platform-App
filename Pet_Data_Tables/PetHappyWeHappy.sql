@@ -16,7 +16,7 @@ CREATE TABLE Users (
          PRIMARY KEY (User_ID)
      )ENGINE=INNODB DEFAULT CHARSET=latin1;
 
-LOAD DATA LOCAL INFILE 'C:/Users/admin/Desktop/257project/Pet-Social-Platform-App/Pet_Data_Tables/User.csv'
+LOAD DATA LOCAL INFILE '/Users/CHELSEY/Documents/Github/info257-gitlcone/Pet-Social-Platform-App/Pet_Data_Tables/User.csv'
 INTO TABLE Users
 FIELDS TERMINATED BY ',' ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
