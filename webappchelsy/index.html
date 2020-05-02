@@ -1,0 +1,120 @@
+<html>
+<head>
+ <title>Pet Happy We Happy Home</title>
+ <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library: Supports Javascript Plugins -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!-- <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='mystyle.css') }}"> -->
+</head>
+<!-- ---------------------------------------- -->
+<!-- Create our own custom CSS -->
+<style>
+@import url(http://fonts.googleapis.com/css?family=Amatic+SC:700);
+body{
+    text-align: center;
+    background-color: #faefd9;
+}
+h1{
+    font-family: 'Amatic SC', cursive;
+    font-weight: bold;
+    color:#a0522d;
+/*    #996600 ;
+*/  font-size: 4em;
+	text-align: center;
+}
+
+p  {
+  color: #e9b555;
+  font-family: Amatic SC;
+  font-size: 2em;
+  text-align: center;
+}
+
+</style>
+<!-- ------------------------------------ -->
+
+<style>
+
+</style>
+<body>
+
+<h1>Pet Happy We Happy
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<i style='font-size:43px' class='fas'>&#xf1b0;</i> 
+
+</h1>
+
+<p>
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+<i style='font-size:12px' class='fas'>&#xf103;</i> Select from the options below <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+<i style='font-size:12px' class='fas'>&#xf103;</i>
+</p>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			</div>
+		<div class="col-md-6 col-md-offset-3">
+			</div>
+	    <div class="col-md-6 col-md-offset-3" style="background-color:
+	    #efca84;">
+	    <!-- #add8e6#cce7ef -->
+<!-- 	  <br>
+ --><!-- 	 <form method="POST" action="/customers">
+	   <div class="form-group">
+	     <input type="submit" value="Species" />
+	   </div>
+	 </form>
+
+	    </div> -->
+<!-- 
+	    <div class="col-sm-3" style="background-color:lavenderblush;">
+	 <br>  	   	
+	<form method="POST" action="/destinations">
+
+	   <div class="form-group">
+	     <input type="submit" value="Insurance" />
+	   </div>
+	 </form>
+	 
+	    </div>
+	    <div class="col-sm-6" style="background-color:lavender;"> -->
+	    	
+	<br>
+
+	<form method="GET" action="/destinations">
+		<label for="search">Find Resource by City </label>
+	  	<select id="accomodations" name="accomodations">
+	  				
+			    {% for ui_row in data %}
+	    		<option value="{{ui_row.City}}" class="dropup" >{{ui_row.City}}
+	    		</option>
+		    	{% endfor %}
+	    	</select>
+<!-- 	   	<input type="submit" value="Search" class=".btn-xs"/>
+
+ -->	   
+ 			<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+			<button style='font-size:18px'> <i class='fas fa-search'></i></button>
+
+	</form>
+
+
+<!-- 	    </div>
+ -->	  </div>
+	</div>
+</div>
+	 
+</body>
+
+</html>
