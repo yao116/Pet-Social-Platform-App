@@ -1,0 +1,283 @@
+<html>
+<head><title>Basic Info of This Breed </title>
+ <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<style>
+@import url(http://fonts.googleapis.com/css?family=Amatic+SC:700);
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Lucida Console;
+  padding: 10px;
+  background: #fcfce4;
+}
+
+/* Header/Blog Title */
+.header {
+  padding: 30px;
+  text-align: center;
+  background: #fcfce4;
+  font-family: Lucida Console;
+
+
+}
+
+.header h1 {
+  font-size: 50px;
+  font-family: 'Amatic SC';
+  color:#a0522d;
+}
+
+.header p {
+  font-size: 30px;
+  font-family: 'Amatic SC';
+  color:#a0522d;
+}
+
+.header a {
+  display: block;
+  color: #a0522d;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.header a:hover {
+  background-color: light grey;
+  color: #efce8a;
+}
+
+
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: white;
+}
+
+/* Style the topnav links */
+.topnav a {
+  display: block;
+  color: grey;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: light grey;
+  color: #efce8a;
+}
+
+.topnav p {
+  font-size: 20px;
+  font-family: 'Lucida Console';
+  color:black;
+}
+
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 30%;
+/*  margin-left: 80px;
+*/
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 30%;
+  background-color: #fcfce4;
+  padding-left: 20px;
+/*  margin-right: 80px;
+*/}
+
+.content {
+  background-color: #fcfce4;
+  padding: 10px;
+  margin-left: 80px;
+  margin-right: 80px;
+}
+
+/* Fake image */
+.fakeimg {
+  background-color: grey;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 3px;
+  text-align: center;
+/*  background: white;
+*/  margin-top: 20px;
+  color: light grey;
+}
+
+
+.footer h3{
+color: grey;
+font-size: 20px;
+font-family:'Lucida Console';
+text-align: center; 
+}
+
+
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .topnav a {
+    float: none;
+    width: 100%;
+  }
+}
+</style>
+
+<body>
+
+<div class="header">
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <a href="http://127.0.0.1:5000/">
+    <i style='font-size:50px' class='fas'>&#xf1b0;</i> 
+  </a>
+  <h1>Pet Happy We Happy</h1>
+</div>
+
+<div class="row">
+  <div class="content">
+<h3 style='text-align: center';>Information of this Breed</h3>
+
+<h3 style='text-align: center';>
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<i style='font-size:24px' class='fas'>&#xf15c;</i>
+Basic
+</h3>
+    <div class="card">
+
+ <table class="table">
+  <tr>
+   <!-- <th>DEST_Name</th>
+   <th>Travelcost</th> -->
+   <!-- <th>Breed_Name</th> -->
+   <th>Type</th>
+   <!-- <th>Pet_Group2</th> -->
+   <th>Avg Male Weight (lbs)</th>
+   <!-- <th>Further_Length</th> -->
+   <th>Avg Lifetime (years)</th>
+   <th>Temperament</th>
+  </tr>
+   {% for ui_row in dest %}
+  <tr>
+   <!-- <td>{{ ui_row.DEST_Name }}</td>
+   <td>{{ ui_row.Travelcost }}</td> -->
+   <!-- <td>{{ ui_row.Breed_name }}</td> -->
+   <td>{{ ui_row.Petgroup1 }}</td>
+   <!-- <td>{{ ui_row.Petgroup2 }}</td> -->
+   <td>{{ ui_row.MaleWtLb }}</td>
+   <!-- <td>{{ ui_row.Fur_Length }}</td> -->
+   <td>{{ ui_row.Avg_life_time }}</td>
+   <td>{{ ui_row.Temperament }}</td>
+
+  </tr>
+   {% endfor %}
+ </table>
+ 
+     </div>
+   </div>
+ </div>
+
+
+<div class="row">
+  <div class="content">
+<h3 style='text-align: center';>
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<i style='font-size:24px' class='fas'>&#xf0c4;</i>
+Grooming
+</h3>
+    <div class="card">
+ <table class="table">
+  <tr>
+   <!-- <th>Breed_Name</th> -->
+   <th>Service Types</th>
+   <th>Avg Cost (dollar)</th>
+   <!-- <th>Max Cost</th> -->
+   <!-- <th>Min Cost</th> -->
+  </tr>
+   {% for ui_row in dest2 %}
+  <tr>
+   <!-- <td>{{ ui_row.breed_name }}</td> -->
+   <td>{{ ui_row.serv_name }}</td>
+   <td>{{ ui_row.avg_price }}</td>
+   <!-- <td>{{ ui_row.max_price }}</td> -->
+   <!-- <td>{{ ui_row.min_price }}</td> -->
+  </tr>
+   {% endfor %}
+ </table>
+     </div>
+   </div>
+ </div>
+
+<div class="row">
+  <div class="content">
+<h3 style='text-align: center';>
+<i style="font-size:24px" class="fa">&#xf0fa;</i>
+Medical
+</h3>
+    <div class="card">
+ <table class="table">
+  <tr>
+   <!-- <th>Breed_Name</th> -->
+   <!-- <th>Sick_ID</th> -->
+   <th>Common Sickness</th>
+   <!-- <th>Sick_Count</th> -->
+   <th>Rank</th>
+  </tr>
+   {% for ui_row in dest3 %}
+  <tr>
+   <!-- <td>{{ ui_row.breed_name }}</td> -->
+   <!-- <td>{{ ui_row.sick_id }}</td> -->
+   <td>{{ ui_row.sick_type }}</td>
+   <!-- <td>{{ ui_row.sick_count }}</td> -->
+   <td>{{ ui_row.count_rank }}</td>
+  </tr>
+   {% endfor %}
+ </table>
+     </div>
+   </div>
+ </div>
+</body>
+</html>

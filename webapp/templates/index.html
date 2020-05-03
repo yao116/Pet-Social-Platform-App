@@ -1,0 +1,375 @@
+<html>
+<head>
+
+ <title>Home</title>
+ <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <!-- Latest compiled and minified CSS -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+   <!-- jQuery library: Supports Javascript Plugins -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+   <!-- Latest compiled JavaScript -->
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   
+   <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='mystyle.css') }}">
+</head>
+
+<style>
+
+@import url(http://fonts.googleapis.com/css?family=Amatic+SC:700);
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Lucida Console;
+  padding: 10px;
+  background: #fafad2;
+}
+
+/* Header/Blog Title */
+.header {
+  padding: 30px;
+  text-align: center;
+  background: #fafad2;
+  font-family: Lucida Console;
+}
+
+.header h1 {
+  font-size: 50px;
+  font-family: 'Amatic SC';
+  color:#a0522d;
+}
+
+.header p {
+  font-size: 30px;
+  font-family: 'Amatic SC';
+  color:#a0522d;
+}
+
+.header a {
+  display: block;
+  color: #a0522d;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.header a:hover {
+  background-color: light grey;
+  color: #efce8a;
+}
+
+.header p{
+  color: #e9b555;
+  font-family: Amatic SC;
+  font-size: 2.5em;
+  text-align: center;
+
+}
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: white;
+}
+
+/* Style the topnav links */
+.topnav a {
+  display: block;
+  color: #e9b555;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change coor on hover */
+.topnav a:hover {
+  background-color: light grey;
+  color: #efce8a;
+}
+
+.topnav p {
+  font-size: 20px;
+  font-family: 'Lucida Console';
+  color:;
+  text-align: center;
+}
+
+
+.content {
+  background-color: #fafad2;
+  padding: 10px;
+  margin-left: 80px;
+  margin-right: 80px;
+}
+
+
+/* Add a card effect for articles */
+.card {
+  background-color: #efce8a;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 3px;
+  text-align: center;
+/*  background: white;
+*/  margin-top: 20px;
+  color: light grey;
+}
+
+
+.footer h3{
+color: grey;
+font-size: 20px;
+font-family:'Lucida Console';
+text-align: center; 
+}
+
+
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .topnav a {
+    float: none;
+    width: 100%;
+  }
+}
+
+@import url(http://fonts.googleapis.com/css?family=Amatic+SC:700);
+/*body{
+	font-family: Amatic SC;
+    text-align: center;
+    font-size: 2em;
+    background-color: #fafad2;
+    #ffffe0;*/
+/*}*/
+h1{
+    font-family: 'Amatic SC', cursive;
+    font-weight: bold;
+    color:#a0522d;
+/*    #996600 ;
+*/  font-size: 5em;
+	text-align: center;
+}
+
+p  {
+  color: #e9b555;
+  font-family: Amatic SC;
+  font-size: 2.5em;
+  text-align: center;
+}
+
+p1 {
+	color: #a0522d;
+  	font-family: Amatic SC;
+ 	font-size: 2em;
+ 	 text-align: left;
+}
+</style>
+<!-- ###############################HEADER################################# -->
+<div class="header">
+ <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <h1><i style='font-size:50px' class='fas'>&#xf1b0;</i> </h1>
+  <h1>Pet Happy We Happy</h1>
+  <p>
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <i style='font-size:30px' class='fas'>&#xf103;</i> 
+  Select from the options below 
+  <i style='font-size:30px' class='fas'>&#xf103;</i>
+  </p>
+</div>
+
+<body>
+<!-- ################Body Jing##################### -->
+<div class="content">
+  <div class="row">
+      <div class='card' style="background-color:#f5da74 ">
+<br> 
+<form method="GET" action="/breedingpartner">
+  <h4>Searching Criteria for Breeding Partners</h4>
+  <label for="search0"> Gender  </label>
+    <select id="search0" name="search0">
+      {% for ui_row in data8 %}
+      <option value="{{ui_row.Gender}}">
+      {{ui_row.Gender}}</option>
+      {% endfor %}
+    </select>&nbsp&nbsp
+    <label for="search1"> City </label>
+    <select id="search1" name="search1">
+      {% for ui_row in data9 %}
+      <option value="{{ui_row.City}}">
+      {{ui_row.City}}</option>
+      {% endfor %}
+    </select>&nbsp&nbsp
+    <label for="search2"> Breed </label>
+    <select id="search2" name="search2">
+      {% for ui_row in data10 %}
+      <option value="{{ui_row.Breed}}">
+      {{ui_row.Breed}}</option>
+      {% endfor %}
+    </select>&nbsp&nbsp
+    <br>
+    <label for="search3"> Age Between </label>
+    <select id="search3" name="search3">
+      {% for i in data11 %}
+      <option value="{{i}}">
+      {{i}}</option>
+      {% endfor %}
+    </select>&nbsp
+    <label for="search4"> And </label>
+    <select id="search4" name="search4">
+      {% for i1 in data12 %}
+      <option value="{{i1}}">
+      {{i1}}</option>
+      {% endfor %}
+    </select>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      <button style='font-size:10px' class="btn-default btn-sm"> <i class='fas fa-search' ></i></button></form>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- #################BODY Chelsey ###################
+ -->
+
+<div class="row">
+	<div class="content">
+	    <div class="card">
+
+<br> 
+<form method="GET" action="/info">
+	<label for="search">  Find Resources Nearby </label>
+  	<select id="search" name="search">
+  		{% for ui_row in data3 %}
+  		<option value="{{ui_row.City}}">
+    	{{ui_row.City}}</option>
+	    {% endfor %}
+    </select>
+      <button style='font-size:10px' class="btn-default btn-sm"> <i class='fas fa-search' ></i></button>
+
+</form>
+
+	  </div>
+	</div>
+</div>
+
+<!-- ################Body Namcy##################### -->
+
+<body>
+
+<div class="row">
+  <div class="content">
+    <div class="card" style="background-color: #e9b555">
+		  
+    <br>
+    <form method="POST" action="/AllInsuranceInfo">
+      <div class="form-group">
+        <input type="submit" value="Find Insurance Companies" class="btn-default btn-sm"/>
+      </div>
+    </form>
+	
+    </div>
+  </div>
+</div>
+  
+<div class="row">
+  <div class="content">
+    <div class="card" style="background-color: #bb8319">
+  <br>
+  <form method="GET" action="/InsuranceInfo">
+  	<label for="search">Learn More about insurance for:</label>
+    	<select id="b" name="category">
+
+  		    {% for ui_row in data2 %}
+      		<!-- <option value="{{ui_row.Accomodations}}">{{ui_row.Accomodations}}</option> -->
+			<option value="{{ui_row.Pet_Category_name}}">
+			{{ui_row.Pet_Category_name}}
+		    </option>
+  	    	{% endfor %}
+      	</select>
+      <button style='font-size:10px' class="btn-default btn-sm"> <i class='fas fa-search' ></i></button>
+   </form>
+    </div>
+  </div>
+</div>
+  
+<div class="row">
+  <div class="content">
+    <div class="card">
+      <br>
+ 
+  <form method="POST" action="/AllBreedInfo">
+
+    <div class="form-group">
+      <input type="submit" value="List All Breed Information" class="btn-default btn-sm"/>
+    </div>
+  </form>
+  
+    </div>
+  </div>
+</div>
+    
+
+<div class="row">
+  <div class="content">
+    <div class="card" style='background-color: #f5da74'>
+       <br>
+  <form method="GET" action="/BreedInfo">
+  	<label for="search">Learn More about :</label>
+    	<select id="a" name="breed">
+  				
+  		    {% for ui_row in data %}
+
+			<option value="{{ui_row.Breed_name}}">
+			{{ui_row.Breed_name}}
+		    </option>
+  	    	{% endfor %}
+      	</select>
+      <button style='font-size:10px' class="btn-default btn-sm"> <i class='fas fa-search' ></i></button>
+  </form>
+    </div>
+  </div>
+</div>
+    
+  
+</div>
+</div>
+</body>
+
+<div class="footer">
+  <h3>BY THREEBIGHEADS</h3>
+  
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <i style='font-size:24px' class='fas'>&#xf118;</i>
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <i style='font-size:24px' class='far'>&#xf11a;</i>
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <i style='font-size:24px' class='far'>&#xf119;</i>
+
+</div>
+
+</html>
+
