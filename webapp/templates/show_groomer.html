@@ -1,0 +1,109 @@
+<html>
+
+<head>
+ <title>Pet Happy We Happy: Popular Places Near You</title>
+ <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<!-- ###############################styling################################
+ -->
+<style>
+@import url(http://fonts.googleapis.com/css?family=Amatic+SC:700);
+body{
+	font-family: Lucida Console;
+    text-align: center;
+    font-size: 4em;
+    background-color: #fcfce4;
+}
+h1{
+    font-family: 'Amatic SC', cursive;
+    font-weight: bold;
+    color:#a0522d;
+	font-size: 1em;
+	text-align: center;
+}
+
+p  {
+  color: #e9b555;
+  font-family: Amatic SC;
+  font-size: 2.5em;
+  text-align: center;
+}
+
+th {
+  color: grey;
+}
+
+</style>
+<!-- ###############################body################################# -->
+
+<body>
+<h1>
+	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+	<i style='font-size:50px' class='fas'>&#xf1b0;</i> 
+</h1>
+<h1>Pet Happy We Happy</h1>
+
+	<table class="table">
+		<tr>
+			<th>Popular Groomers</th>
+			<th>Average Time(Minutes)</th>
+			<th>Average Cost(Dollars)</th>
+
+		</tr>
+			{% for ui_row in groomers %}
+		<tr>
+			<td>{{ ui_row.top_groomers}}</td>
+			<td>{{ ui_row.AVG_TIME_SPENT}}</td>
+			<td>{{ ui_row.AVG_COST_SPENT}}</td>
+
+		</tr>
+			{% endfor %}
+	</table>
+
+
+	<table class="table">
+		<tr>
+			<th>Popular Trainers</th>
+			<th>Average Time(Weeks)</th>
+			<th>Average Cost(Dollars)</th>
+
+		</tr>
+			{% for ui_row in trainers %}
+		<tr>
+			<td>{{ ui_row.top_trainers}}</td>
+			<td>{{ ui_row.AVG_TRAINING_WEEK_TIME}}</td>
+			<td>{{ ui_row.AVG_TRAIN_COST}}</td>
+
+
+		</tr>
+			{% endfor %}
+	</table>
+
+
+	<table class="table">
+		<tr>
+			<th>Popular Vets</th>
+
+		</tr>
+			{% for ui_row in vets %}
+		<tr>
+			<td>{{ ui_row.top_vets}}</td>
+
+		</tr>
+			{% endfor %}
+	</table>
+	
+</body>
+</html>
+
+
+
+
+
+
+

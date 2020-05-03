@@ -1,0 +1,227 @@
+<html>
+<!-- <head><title>information of insurance</title>
+</head> -->
+<head>
+
+ <title>Pet Happy We Happy: Top Insurance Companies by Breed</title>
+ <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<style>
+@import url(http://fonts.googleapis.com/css?family=Amatic+SC:700);
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Lucida Console;
+  padding: 10px;
+  background: #fcfce4;
+}
+
+/* Header/Blog Title */
+.header {
+  padding: 30px;
+  text-align: center;
+  background: #fcfce4;
+  font-family: Lucida Console;
+
+
+}
+
+.header h1 {
+  font-size: 50px;
+  font-family: 'Amatic SC';
+  color:#a0522d;
+}
+
+.header p {
+  font-size: 30px;
+  font-family: 'Amatic SC';
+  color:#a0522d;
+}
+
+.header a {
+  display: block;
+  color: #a0522d;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.header a:hover {
+  background-color: light grey;
+  color: #efce8a;
+}
+
+
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: white;
+}
+
+/* Style the topnav links */
+.topnav a {
+  display: block;
+  color: grey;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: light grey;
+  color: white;
+}
+
+.topnav p {
+  font-size: 20px;
+  font-family: 'Lucida Console';
+  color:black;
+}
+
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 70%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 30%;
+  background-color: #fcfce4;
+  padding-left: 20px;
+}
+
+.content {
+  background-color: #fcfce4;
+  padding: 10px;
+  margin-left: 80px;
+  margin-right: 80px;
+}
+
+/* Fake image */
+.fakeimg {
+  background-color: grey;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 3px;
+  text-align: center;
+/*  background: white;
+*/  margin-top: 20px;
+  color: light grey;
+}
+
+
+.footer h3{
+color: grey;
+font-size: 20px;
+font-family:'Lucida Console';
+text-align: center; 
+}
+
+
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .topnav a {
+    float: none;
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <a href="http://127.0.0.1:5000/">
+    <i style='font-size:50px' class='fas'>&#xf1b0;</i> 
+  </a>
+  <h1>Pet Happy We Happy</h1>
+</div>
+
+      <h3 style='text-align: center;' style="margin-bottom: 5px;">Top Insurances for this Category</h3>
+
+<div class="row">
+  <div class="content">
+    <div class="card">
+
+	<table class="table">
+		<tr>
+			<th>Catefory</th>
+			<th>Insurance Company</th>
+			<th>Link</th>
+			<th>Rank</th>
+			<th>Max Cost</th>
+			<th>Min Cost</th>
+		</tr>
+			{% for ui_row in customers %}
+		<tr>
+			<td>{{ ui_row.Pet_Catefory }}</td>
+			<td>{{ ui_row.Insurance_company_Name }}</td>
+			<td>{{ ui_row.Company_Link }}</td>
+			<td>{{ ui_row.Rank_of_Insurance }}</td>
+			<td>{{ ui_row.max_cost_per_year }}</td>
+			<td>{{ ui_row.min_cost_per_year }}</td>
+		</tr>
+			{% endfor %}
+	</table>
+</body>
+		</div>
+	</div>
+</div>
+<div class="footer">
+  <h3>BY THREEBIGHEADS</h3>
+  
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <i style='font-size:24px' class='fas'>&#xf118;</i>
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <i style='font-size:24px' class='far'>&#xf11a;</i>
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <i style='font-size:24px' class='far'>&#xf119;</i>
+
+</div>
+
+</html>
+
+
+
+
+
