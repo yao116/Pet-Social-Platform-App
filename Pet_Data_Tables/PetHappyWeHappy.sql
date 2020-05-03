@@ -8,7 +8,7 @@ CREATE TABLE Users (
          User_ID int(8) NOT NULL AUTO_INCREMENT,
          User_first_name VARCHAR(30) NOT NULL,
          User_last_name VARCHAR(30) NOT NULL,
-         Street VARCHAR(40) NULL,
+         Street VARCHAR(100) NULL,
          City VARCHAR(10) NULL,
          State VARCHAR(2) NULL,
          Pet_owner boolean NOT NULL,
@@ -26,7 +26,7 @@ IGNORE 1 ROWS(User_ID, User_first_name,User_last_name,Street,City,State,Pet_owne
 DROP TABLE IF EXISTS `Pet_Category`
 CREATE TABLE Pet_Category (
          Pet_Category_ID int(2) NOT NULL AUTO_INCREMENT,
-         Pet_Category_name VARCHAR(15) NOT NULL,
+         Pet_Category_name VARCHAR(20) NOT NULL,
          PRIMARY KEY (Pet_Category_ID)
      )ENGINE=INNODB DEFAULT CHARSET=latin1;
 
@@ -40,8 +40,8 @@ IGNORE 1 ROWS(Pet_Category_ID,Pet_Category_name);
 DROP TABLE IF EXISTS `Insurance_Company`
 CREATE TABLE Insurance_Company (
          Insurance_company_ID int(3) NOT NULL AUTO_INCREMENT,
-         Insurance_company_Name VARCHAR(20) NOT NULL,
-         Company_Link VARCHAR(50) NULL,
+         Insurance_company_Name VARCHAR(100) NOT NULL,
+         Company_Link VARCHAR(100) NULL,
          PRIMARY KEY (Insurance_company_ID)
      )ENGINE=INNODB DEFAULT CHARSET=latin1;
 
@@ -55,14 +55,14 @@ IGNORE 1 ROWS(Insurance_company_ID,Insurance_company_Name,Company_Link);
 DROP TABLE IF EXISTS `Breed`;
 CREATE TABLE Breed (
          Breed_ID int(4) NOT NULL AUTO_INCREMENT,
-         Breed_name VARCHAR(20) NOT NULL,
-         AltBreedName VARCHAR(10) NULL,
-         PetGroup1 VARCHAR(10) NULL,
-         PetGroup2 VARCHAR(10) NULL,
+         Breed_name VARCHAR(100) NOT NULL,
+         AltBreedName VARCHAR(100) NULL,
+         PetGroup1 VARCHAR(50) NULL,
+         PetGroup2 VARCHAR(50) NULL,
          MaleWtLb int(4) NULL,
-         Fur_Length VARCHAR(10),
-         Avg_life_time VARCHAR(8) NULL,
-         Temperament VARCHAR(60) NULL,
+         Fur_Length VARCHAR(20),
+         Avg_life_time VARCHAR(10) NULL,
+         Temperament VARCHAR(100) NULL,
          Pet_Category_ID INT(2) not null,
          PRIMARY KEY (Breed_ID),
          Foreign Key (Pet_Category_ID) REFERENCES Pet_Category(Pet_Category_ID)
@@ -93,7 +93,7 @@ CREATE TABLE Pet (
          Quiet Binary,
          Height_inch DOUBLE,
          Weight_lb DOUBLE,
-         Length_inch varchar(7) null,
+         Length_inch varchar(10) null,
          Coat_Color varChar(30),
          PRIMARY KEY (Pet_ID),
          Foreign Key (User_ID) REFERENCES Users(User_ID),
@@ -140,7 +140,7 @@ CREATE TABLE User_Pet_Accomendation_Preference(
          Fst_genus_willing_to_take varchar(10),
          Scd_genus_willing_to_take varchar(10),
          Trd_genus_willing_to_take varchar(10),
-         Extra_preference_details varchar(60),
+         Extra_preference_details varchar(100),
          PRIMARY KEY (User_ID)
      )ENGINE=INNODB DEFAULT CHARSET=latin1;
 
@@ -154,7 +154,7 @@ IGNORE 1 ROWS;
 DROP TABLE if EXISTS `Grooming_Services`;
 CREATE TABLE Grooming_Services(
          GService_ID INT(2) NOT NULL AUTO_INCREMENT,
-         Service_name VARCHAR(40) NOT NULL,
+         Service_name VARCHAR(50) NOT NULL,
          PRIMARY KEY (GService_ID)
      )ENGINE=INNODB DEFAULT CHARSET=latin1;
 
@@ -168,7 +168,7 @@ IGNORE 1 ROWS;
 DROP TABLE  IF EXISTS `Groomer`;
 CREATE TABLE Groomer (
     Groomer_ID int(3) NOT NULL AUTO_INCREMENT,
-    Groomer_name varchar(40) NOT NULL,
+    Groomer_name varchar(100) NOT NULL,
     City VARCHAR(20) NOT NULL ,
     State VARCHAR(2) NOT NULL,
     PRIMARY KEY (Groomer_ID)
@@ -191,6 +191,7 @@ CREATE TABLE Grooming_Record (
     Price int(3),
     Service_time int(3),
     PRIMARY KEY (GRecord_ID),
+    FOREIGN KEY (Pet_ID) REFERENCES  Pet(Pet_ID) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (GService_ID) REFERENCES Grooming_Services(GService_ID) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (Groomer_ID) REFERENCES Groomer(Groomer_ID) ON DELETE CASCADE ON UPDATE CASCADE
 )ENGINE=INNODB DEFAULT CHARSET=latin1;
@@ -207,7 +208,7 @@ IGNORE 1 ROWS;
 DROP TABLE  IF EXISTS `Pet_Training_Type`;
 CREATE TABLE Pet_Training_Type (
     Training_ID INT(2) NOT NULL AUTO_INCREMENT,
-    Training_name VARCHAR(40) NOT NULL,
+    Training_name VARCHAR(50) NOT NULL,
     PRIMARY KEY (Training_ID)
 )ENGINE=INNODB DEFAULT CHARSET=latin1;
 
@@ -311,7 +312,7 @@ CREATE TABLE Foster_Care_Record (
     Date_of_return DATE,
     PRIMARY KEY (Request_ID),
     FOREIGN KEY (Pet_ID) REFERENCES Pet(Pet_ID)  ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (User_ID) REFERENCES Users(User_ID)  ON DELETE CASCADE ON UPDATE CASCADE
+    FOREIGN KEY (User_ID) REFERENCES User_Pet_Accomendation_Preference(User_ID)  ON DELETE CASCADE ON UPDATE CASCADE
 )ENGINE=INNODB DEFAULT CHARSET=latin1;
 
 LOAD DATA LOCAL INFILE '/Users/CHELSEY/Documents/Github/info257-gitlcone/Pet-Social-Platform-App/Pet_Data_Tables/Foster_Care_Record.csv'
