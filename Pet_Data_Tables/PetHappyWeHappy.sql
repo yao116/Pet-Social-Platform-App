@@ -6,6 +6,8 @@ use PetHappyWeHappy;
 DROP TABLE IF EXISTS `Users`;
 CREATE TABLE Users (
          User_ID int(8) NOT NULL AUTO_INCREMENT,
+         Email VARCHAR(100) NOT NULL,
+         Password VARCHAR(30) NOT NULL,
          User_first_name VARCHAR(30) NOT NULL,
          User_last_name VARCHAR(30) NOT NULL,
          Street VARCHAR(100) NULL,
@@ -16,11 +18,11 @@ CREATE TABLE Users (
          PRIMARY KEY (User_ID)
      )ENGINE=INNODB DEFAULT CHARSET=latin1;
 
-LOAD DATA LOCAL INFILE '/Users/CHELSEY/Documents/Github/info257-gitlcone/Pet-Social-Platform-App/Pet_Data_Tables/User.csv'
+LOAD DATA LOCAL INFILE '/Users/CHELSEY/Documents/Github/info257-gitlcone/Pet-Social-Platform-App/Pet_Data_Tables/AllUser.csv'
 INTO TABLE Users
 FIELDS TERMINATED BY ',' ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
-IGNORE 1 ROWS(User_ID, User_first_name,User_last_name,Street,City,State,Pet_owner,Want_to_help_look_after_pets);
+IGNORE 1 ROWS(User_ID, Email, Password,User_first_name,User_last_name,Street,City,State,Pet_owner,Want_to_help_look_after_pets);
 
 # ________________________________________
 DROP TABLE IF EXISTS `Pet_Category`
