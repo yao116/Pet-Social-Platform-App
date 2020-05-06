@@ -310,7 +310,7 @@ CREATE TABLE Foster_Care_Record (
     Pet_ID INT(8) NOT NULL ,
     User_ID INT(8) NOT NULL ,
     Request_date DATE,
-    Date_of_travle DATE,
+    Date_of_travel DATE,
     Date_of_return DATE,
     PRIMARY KEY (Request_ID),
     FOREIGN KEY (Pet_ID) REFERENCES Pet(Pet_ID)  ON DELETE CASCADE ON UPDATE CASCADE,
@@ -344,7 +344,7 @@ IGNORE 1 ROWS;
 DROP TABLE IF EXISTS Purpose_of_Visit;
 CREATE TABLE Purpose_of_Visit (
     Purpose_ID INT(3) NOT NULL AUTO_INCREMENT,
-    Purpose_discription VARCHAR(100),
+    Purpose_description VARCHAR(100),
     PRIMARY KEY (Purpose_ID)
 )ENGINE=INNODB DEFAULT CHARSET=latin1;
 
