@@ -96,7 +96,7 @@ CREATE TABLE `Foster_Care_Record` (
   `Pet_ID` int(8) NOT NULL,
   `User_ID` int(8) NOT NULL,
   `Request_date` date DEFAULT NULL,
-  `Date_of_travle` date DEFAULT NULL,
+  `Date_of_travel` date DEFAULT NULL,
   `Date_of_return` date DEFAULT NULL,
   PRIMARY KEY (`Request_ID`),
   KEY `Pet_ID` (`Pet_ID`),
@@ -478,7 +478,7 @@ DROP TABLE IF EXISTS `Purpose_of_Visit`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Purpose_of_Visit` (
   `Purpose_ID` int(3) NOT NULL AUTO_INCREMENT,
-  `Purpose_discription` varchar(100) DEFAULT NULL,
+  `Purpose_description` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`Purpose_ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=112 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
