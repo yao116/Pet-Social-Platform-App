@@ -24,10 +24,8 @@ This is a simple web application for pet users to obtain information based on th
     
 ```
 
-## Files
+## Files in this Repo
 
-```
-	* The weapp folder is for webb application 
-	* The PetHappyWeHappy_backup.sql is the sql file to create the database
-	* The Pet_Data_Tables contains all the tables inserted into the databases
-```
+* The weapp folder is for webb application 
+* The PetHappyWeHappy_backup.sql is the sql file to create the database
+* The Pet_Data_Tables contains all the tables inserted into the databases
