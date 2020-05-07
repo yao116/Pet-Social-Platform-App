@@ -120,7 +120,7 @@ def groomer():
 def dest():
     result = db.engine.execute("select * from Breed")
     result2 = db.engine.execute("select b.Breed_name, GS.Service_name, round(avg(GR.Price),1), max(GR.Price), min(GR.Price) from Breed b join Pet p on b.Breed_ID = p.Breed_ID join Grooming_Record GR on p.Pet_ID = GR.Pet_ID join Grooming_Services GS on GR.GService_ID = GS.GService_ID group by b.Breed_ID, GR.GService_ID")
-    result3 = db.engine.execute("select b2.Breed_name, P2.Breed_ID, MH.Purpose_ID, PoV.Purpose_discription, count(P2.Breed_ID) as count, dense_rank() over (partition by Breed_ID order by count(P2.Breed_ID) desc) as rank from Breed b2 join Pet P2 on b2.Breed_ID = P2.Breed_ID join Medical_History MH on P2.Pet_ID = MH.Pet_ID join Purpose_of_Visit PoV on PoV.Purpose_ID = MH.Purpose_ID group by P2.Breed_ID, MH.Purpose_ID order by P2.Breed_Id, rank ")
+    result3 = db.engine.execute("select b2.Breed_name, P2.Breed_ID, MH.Purpose_ID, PoV.Purpose_description, count(P2.Breed_ID) as count, dense_rank() over (partition by Breed_ID order by count(P2.Breed_ID) desc) as rank from Breed b2 join Pet P2 on b2.Breed_ID = P2.Breed_ID join Medical_History MH on P2.Pet_ID = MH.Pet_ID join Purpose_of_Visit PoV on PoV.Purpose_ID = MH.Purpose_ID group by P2.Breed_ID, MH.Purpose_ID order by P2.Breed_Id, rank ")
     names = []
     names2 = []
     names3 = []
@@ -161,7 +161,7 @@ def dest2():
     Search = request.args.get('breed')
     result = db.engine.execute("select * from Breed where Breed_name=%s",Search)
     result2 = db.engine.execute("select b.Breed_name, GS.Service_name, round(avg(GR.Price),1), max(GR.Price), min(GR.Price) from Breed b join Pet p on b.Breed_ID = p.Breed_ID join Grooming_Record GR on p.Pet_ID = GR.Pet_ID join Grooming_Services GS on GR.GService_ID = GS.GService_ID where Breed_name=%s group by GR.GService_ID",Search)
-    result3 = db.engine.execute("select b2.Breed_name, P2.Breed_ID, MH.Purpose_ID, PoV.Purpose_discription, count(P2.Breed_ID) as count, dense_rank() over (partition by Breed_ID order by count(P2.Breed_ID) desc) as rank from Breed b2 join Pet P2 on b2.Breed_ID = P2.Breed_ID join Medical_History MH on P2.Pet_ID = MH.Pet_ID join Purpose_of_Visit PoV on PoV.Purpose_ID = MH.Purpose_ID where b2.Breed_name=%s group by P2.Breed_ID, MH.Purpose_ID order by P2.Breed_Id, rank ",Search)
+    result3 = db.engine.execute("select b2.Breed_name, P2.Breed_ID, MH.Purpose_ID, PoV.Purpose_description, count(P2.Breed_ID) as count, dense_rank() over (partition by Breed_ID order by count(P2.Breed_ID) desc) as rank from Breed b2 join Pet P2 on b2.Breed_ID = P2.Breed_ID join Medical_History MH on P2.Pet_ID = MH.Pet_ID join Purpose_of_Visit PoV on PoV.Purpose_ID = MH.Purpose_ID where b2.Breed_name=%s group by P2.Breed_ID, MH.Purpose_ID order by P2.Breed_Id, rank ",Search)
     names = []
     names2 = []
     names3 = []
