@@ -13,7 +13,6 @@ This is a simple web application for pet users to obtain information based on th
 
 5. Once everything ready, then you can negigate our web application using the following links or explore on your own in the home page
 
-```
 - http://127.0.0.1:5000/
 - http://127.0.0.1:5000/breedingpartner?search0=F&search1=Long+Beach&search2=American+Shorthair&search3=0&search4=13
 - http://127.0.0.1:5000/info?search=Austin
@@ -22,7 +21,6 @@ This is a simple web application for pet users to obtain information based on th
 - http://127.0.0.1:5000/AllBreedInfo
 - http://127.0.0.1:5000/BreedInfo?breed=Chihuahua
     
-```
 
 ## Files in this Repo
 
