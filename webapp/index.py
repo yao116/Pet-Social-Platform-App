@@ -258,16 +258,17 @@ def breedingpartner():
   search3 = request.args.get('search3')
   search4 = request.args.get('search4')
 
-  resulta = db.engine.execute("SELECT Users.User_first_name, Users.User_last_name, Users.Street, Users.City, Pet.Pet_F_Name, Pet.Gender, TIMESTAMPDIFF(YEAR, Data_of_birth, CURDATE()) as Age From Pet, Users, Breed where Pet.User_ID = Users.User_ID AND Breed.Breed_ID = Pet.Breed_ID And Gender = %s And City = %s And Breed_name = %s And TIMESTAMPDIFF(YEAR, Data_of_birth, CURDATE()) BETWEEN %s AND %s", search0,search1,search2,search3,search4)
+  resulta = db.engine.execute("SELECT Users.User_first_name, Users.User_last_name,Users.Email, Users.Street, Users.City, Pet.Pet_F_Name, Pet.Gender, TIMESTAMPDIFF(YEAR, Data_of_birth, CURDATE()) as Age From Pet, Users, Breed where Pet.User_ID = Users.User_ID AND Breed.Breed_ID = Pet.Breed_ID And Gender = %s And City = %s And Breed_name = %s And TIMESTAMPDIFF(YEAR, Data_of_birth, CURDATE()) BETWEEN %s AND %s", search0,search1,search2,search3,search4)
   names  = []    
   for row in resulta:
         name = {}
         name["User_first_name"] = row[0]
         name["User_last_name"] = row[1]
-        name["City"] = row[3]
-        name["Pet_F_Name"] = row[4]
-        name["Gender"] = row[5]
-        name["Age"] = row[6]
+        name["Email"] = row[2]
+        name["City"] = row[4]
+        name["Pet_F_Name"] = row[5]
+        name["Gender"] = row[6]
+        name["Age"] = row[7]
         names.append(name)
   return render_template('show_breedingpartner.html',breedingpartner=names)
 
