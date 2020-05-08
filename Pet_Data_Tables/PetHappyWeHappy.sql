@@ -287,14 +287,12 @@ IGNORE 1 ROWS;
 DROP TABLE IF EXISTS Breeding_Record;
 CREATE TABLE Breeding_Record (
     BRecord_ID INT(7) NOT NULL AUTO_INCREMENT,
-    F_Pet_ID INT(8),
-    M_Pet_ID INT(8),
+    Pet_ID INT(8) NOT NULL,
     Appearance_inherited_or_not BOOLEAN,
     Breeding_date DATE,
     Cost INT(6),
     PRIMARY KEY (BRecord_ID),
-    FOREIGN KEY (F_Pet_ID) REFERENCES Pet(Pet_ID) ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (M_Pet_ID) REFERENCES Pet(Pet_ID)  ON DELETE CASCADE ON UPDATE CASCADE
+    FOREIGN KEY (Pet_ID) REFERENCES Pet(Pet_ID) ON DELETE CASCADE ON UPDATE CASCADE
 )ENGINE=INNODB DEFAULT CHARSET=latin1;
 
 LOAD DATA LOCAL INFILE '/Users/CHELSEY/Documents/Github/info257-gitlcone/Pet-Social-Platform-App/Pet_Data_Tables/Breeding_Record.csv'
